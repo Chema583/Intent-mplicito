@@ -35,17 +35,16 @@ public class AgregarContacto extends AppCompatActivity {
         binding.button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listaContactos();
+                String nombre = binding.editTextText2.getText().toString();
+                String Telefono = binding.editTextText3.getText().toString();
+                String gmail = binding.editTextText4.getText().toString();
+                listaContactos(nombre, Telefono, gmail);
 
             }
         });
     }
 
-    String nombre = binding.editTextText2.getText().toString();
-    String Telefono = binding.editTextText3.getText().toString();
-    String gmail = binding.editTextText4.getText().toString();
-
-    private void listaContactos(nombre, Telefono, gmail) {
+    private void listaContactos(String nombre, String Telefono, String gmail) {
         Intent intent = new Intent(Intent.ACTION_INSERT);
         intent.setType(ContactsContract.Contacts.CONTENT_TYPE);
 
